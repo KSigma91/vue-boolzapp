@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <!-- CSS -->
+     <link rel="stylesheet" href="css/style.css">
+    <title>Boolzap</title>
+</head>
+<body>
+   
+    <div class="container">
+
+        <!-- lista dei contatti -->
+        <aside id="contact">
+            <header id="navbar-contact">
+                <!-- avatar -->
+                <a class="button" href="#">
+                    <img src="img/avatar-g199a63f42_1280.png" alt="avatar_profile_img">
+                    <span>Sofia</span>
+                </a> 
+
+                <!-- icone -->
+                <a class="button" href="#">
+                    <!-- stato -->
+                    <i class="fas fa-circle-notch"></i>
+                    <!-- nuova chat -->
+                    <i class="fas fa-comment-alt"></i>
+                    <!-- menu a tendina -->
+                    <i class="fas fa-ellipsis-v"></i>
+                </a>              
+            </header>
+
+            <!-- notifiche messaggi -->
+            <section id="alert">
+                <a href="#">
+                    <i class="fas fa-bell-slash"></i>
+                </a>
+                <div class="row">
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <a href="#">
+                        <span>Attiva notifiche desktop</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- barra di ricerca -->
+            <section id="search-bar"> 
+                <i class="fas fa-search"></i>              
+                <input type="search" placeholder="Cerca o inizia una nuova chat">
+            </section>
+
+            <!-- lista dei contatti -->
+            <section id="col">
+                <div class="row">
+                    <a href="#">
+                        <img src="img/avatar-g199a63f42_1280.png" alt="avatar_profile_img">
+                    </a>
+                    <a class="text-row" href="#">
+                        <h3>Pinco</h3>
+                        <p>Ultimo messaggio inviato</p>                       
+                    </a> 
+                    <span>12:00</span>
+                </div>
+            </section>
+        </aside>
+
+        <!-- area della chat -->
+        <main id="chat">
+            <header id="navbar-chat">
+
+            </header>
+
+            <section>
+
+            </section>
+
+            <footer>
+
+            </footer>
+        </main>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

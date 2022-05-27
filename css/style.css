@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #B1B1B1;
+    text-decoration: none;
+}
+
+i {
+    font-size: 23px;
+}
+
+/* lista dei contatti */
+#contact {
+    width: 30%;
+    height: 100vh;
+}
+
+#contact #navbar-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eaeaea;
+    height: 70px;
+}
+
+#navbar-contact .button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px;
+    width: 120px;
+}
+
+#navbar-contact .button:first-child {
+    width: 90px;
+    color: #000;
+}
+
+#navbar-contact > a img {
+    height: 50px;
+    border-radius: 50px;
+}
+
+/* notifiche messaggi */
+#contact #alert {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    background: #8EDAFC;
+    height: 75px;
+}
+
+#alert > a i {
+    background: #F2FBFF;
+    color: #8EDAFC;
+    margin-left: 20px;
+    padding: 14px 11px;
+    border-radius: 50px;
+    font-size: 19px;
+}
+
+#alert .row {
+    width: 250px;
+}
+
+#alert .row > h4 {
+    font-weight: 400;
+}
+
+#alert .row > a span {
+    font-size: 13px;
+    text-decoration: underline;
+    color: #4E7485;
+}
+
+/* barra di ricerca */
+#contact #search-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    padding: 6px;
+} 
+
+#search-bar > i {
+    font-size: 15px;
+    border: 1px solid #B1B1B1;
+    padding: 10px 25px;
+    color: #B1B1B1;
+}
+
+#search-bar > input { 
+    border: 1px solid #B1B1B1;
+    border-width: 1px 1px 1px 0;
+    padding: 10px;
+    width: 90%;
+}
+
+/* lista dei contatti */
+#contact #col {
+    height: 75px;
+}
+
+#col .row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    height: 75px;
+    border-top: 1px solid #B1B1B1;
+}
+
+#col .row a {
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#col .row a > img {
+    margin: 0 10px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+#col .row .text-row {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.row .text-row > h3 {
+    font-weight: 400;
+    color: #000;
+}
+
+.row .text-row > p, .row > span {
+    font-size: 13px;
+    color: #B1B1B1;
+}
+
+.row > span {
+    margin-bottom: 35px;
+}
+
+
+
+/* area della chat */
+#chat {
+    display: flex;
+    width: 70%;
+    height: 100vh;
+    /* debug */
+    background: lime;
+}
