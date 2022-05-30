@@ -133,7 +133,7 @@ i {
     align-items: center;
     padding: 10px;
     height: 75px;
-    border-top: 1px solid #B1B1B1;
+    border-top: 1px solid #eaeaea;
 }
 
 #col .row a {
@@ -196,6 +196,10 @@ i {
     display: flex;
     align-items: center;
     gap: 14px;
+}
+
+.row:hover {
+    background: #e9ebeb;
 }
 
 #navbar-chat .row a > img {

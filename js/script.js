@@ -127,6 +127,9 @@ var app = new Vue({
         ]
     },
     methods : {
-            
+        viewMessage(show) {
+            this.listContact = show;
+            this.show = listContact.messages;
+        } 
     }
 });
