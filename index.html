@@ -59,18 +59,18 @@
 
             <!-- lista dei contatti -->
             <section id="col">
-                <div class="row">
+                <div v-for="item in listContact" class="row" :key="i">
                     <a href="#">
-                        <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="avatar_profile_img">
+                        <!-- <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="avatar_profile_img"> -->
+                        <img :src="item.avatar" :alt="item.name">
                     </a>
-                    <a class="text-row" href="#">
-                        <h3>Pinco</h3>
-                        <p>Ultimo messaggio inviato</p>                       
+                    <a class="text-row" href="#">                      
+                        <h3>{{ item.name }}</h3>
+                        <p>Ultimo messaggio inviato</p>
                     </a> 
                     <span>12:00</span>
                 </div>
             </section>
-
         </aside>
 
         <!-- area della chat -->
