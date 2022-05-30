@@ -18,6 +18,7 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 var app = new Vue({
     el : '.container',
     data : {
+        cliccato : 0,
         selectMessage : "",
         listContact : [
             {
@@ -46,7 +47,7 @@ var app = new Vue({
                 name : "Panco",
                 avatar : "img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png",
                 visible : true,
-                messagge : [
+                messages : [
                     {
                         date : "20/03/2020 16:30:00",
                         message : "La Marianna va in campagna",
@@ -128,8 +129,8 @@ var app = new Vue({
         ]
     },
     methods : {
-        showMessage() {
-            this.listContact.messages = this.selectMessage;
+        showMessage(posizioneContatto) {
+            this.cliccato = posizioneContatto;
         }
     }
 });
