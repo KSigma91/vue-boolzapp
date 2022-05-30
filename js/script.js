@@ -18,6 +18,7 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 var app = new Vue({
     el : '.container',
     data : {
+        selectMessage : "",
         listContact : [
             {
                 name : "Pinco",
@@ -127,9 +128,8 @@ var app = new Vue({
         ]
     },
     methods : {
-        viewMessage(show) {
-            this.listContact = show;
-            this.show = listContact.messages;
-        } 
+        showMessage() {
+            this.listContact.messages = this.selectMessage;
+        }
     }
 });

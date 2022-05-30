@@ -59,7 +59,7 @@
 
             <!-- lista dei contatti -->
             <section id="col">
-                <div v-for="(item, i) in listContact" class="row" :key="i" @click="viewMessage">
+                <div v-for="(item, i) in listContact" class="row" :key="i" @click="showMessage(listContact[0].name)">
                     <a href="#">
                         <!-- <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="avatar_profile_img"> -->
                         <img :src="item.avatar" :alt="item.name">
@@ -99,8 +99,9 @@
 
             <!-- messaggi -->
             <section id="content">
-                <div v-for="(text, i) in messages" class="message-contact" :key="i">
+                <div v-for="(text, i) in listContact[0].messages" class="message-contact" :key="i">
                     {{ text.message }}
+                    {{ text.date }}
                     <!-- <span>16.15</span> -->
                 </div>
                 <!-- <div class="message-me">
