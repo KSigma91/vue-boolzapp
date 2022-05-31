@@ -24,7 +24,7 @@
                 <!-- avatar -->
                 <a class="button" href="#">
                     <img src="img/avatar-g199a63f42_1280.png" alt="avatar_profile_img">
-                    <span>Sofia</span>
+                    <span>Utente</span>
                 </a> 
 
                 <!-- icone -->
@@ -61,7 +61,6 @@
             <section id="col">
                 <div v-for="(item, i) in listContact" class="row" :key="i" @click="showMessage(i)">
                     <a href="#">
-                        <!-- <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="avatar_profile_img"> -->
                         <img :src="item.avatar" :alt="item.name">
                     </a>
                     <a class="text-row" href="#">                      
@@ -80,7 +79,7 @@
             <header id="navbar-chat">
                 <div class="row">
                     <a href="#">
-                        <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="avatar_profile_img">
+                        <img src="img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png" alt="user_profile_img">
                     </a>
                     <a href="#">
                         <h3>Pinco</h3>
@@ -99,15 +98,20 @@
 
             <!-- messaggi -->
             <section id="content">
-                <div v-for="(text, i) in listContact[cliccato].messages" class="message-contact" :key="i">
-                    {{ text.message }}
-                    {{ text.date }}
-                    <!-- <span>16.15</span> -->
+                <!-- colonna dei messaggi del contatto -->
+                <div class="col-contact">
+                    <div v-for="(received, i) in listContact[cliccato].messages" class="message contact" :key="i">
+                        <p>{{ received.message }}</p>
+                        <span>{{ received.date }}</span>
+                    </div>
                 </div>
-                <!-- <div class="message-me">
-                    testo di prova
-                    <span>15:30</span>
-                </div> -->
+                <!-- colonna dei messaggi dell'utente -->
+                <div class="col-user">
+                    <div v-for="(sent, i) in listContact[cliccato].messages" class="message user" :key="i">
+                        <p>{{ sent.message }}</p>
+                        <span>{{ sent.date }}</span>
+                    </div>
+                </div>
             </section>
 
             <!-- barra footer -->
@@ -117,7 +121,7 @@
                     <i class="far fa-smile"></i>
                 </a>
                 <!-- campo per la digitazione -->
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" placeholder="Scrivi un messaggio" keyup.enter="digitMessage" v-model="myMessage">
                 <!-- icona registra audio -->
                 <a href="#">
                     <i class="fas fa-microphone"></i>

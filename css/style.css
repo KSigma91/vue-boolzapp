@@ -10,9 +10,11 @@ body {
 
 .container {
     display: flex;
+    position: fixed;
     margin: 0 auto;
     width: 100%;
-    /* padding: 21px 155px; */
+    padding: 21px 187px;
+    background: url(../img/bg.jpg);
 }
 
 img {
@@ -81,6 +83,7 @@ i {
 
 #alert .row {
     width: 250px;
+    background: #8EDAFC;
 }
 
 #alert .row > h4 {
@@ -123,7 +126,8 @@ i {
 
 /* lista dei contatti */
 #contact #col {
-    height: calc(100vh - 195px);
+    height: calc(100vh - 237px);
+    background: white;
     overflow-y: scroll;
 }
 
@@ -176,7 +180,7 @@ i {
 /* area della chat */
 .container #chat {
     width: calc(100% - 537px);
-    height: calc(100vh - 70px);
+    height: calc(100vh - 91px);
     background: url(../img/wp_132.jpg);
     background-size: contain;
 }
@@ -231,44 +235,67 @@ i {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 182px);
     overflow-y: scroll;
 }
 
-#content .message-contact {
+#content .col-contact, .col-user {
     display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
+    flex-direction: column;
+}
+
+#content .message {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    padding: 15px;
-    width: 313px;
+    margin: 5px 0;
+    padding: 8px;
+    width: 332px;
     height: 53px;
+    font-size: 15px;
+}
+
+.message.contact {
     background: white;
 }
 
-.message-contact > span {
-    align-self: flex-end;
-    font-size: 10px;
-    color: #B1B1B1;
-}
-
-#content .message-me {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 10px;
-    padding: 15px;
-    width: 313px;
-    height: 53px;
+.message.user {
     background: #d5f9ba;
 }
 
-.message-me > span {
+.message > p {
+    margin-left: 8px;
+}
+
+.message > span {
     align-self: flex-end;
     font-size: 10px;
     color: #B1B1B1;
 }
+
+/* #content .col-me .message-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin
+    padding: 15px;
+    width: 332px;
+    height: 53px;
+    background: #d5f9ba;
+} */
+
+/* #content .col-me {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .message-me > span {
+    align-self: flex-end;
+    font-size: 10px;
+    color: #B1B1B1;
+} */
 
 
 /* barra per la digitazione */
@@ -279,12 +306,13 @@ i {
     width: 100%;
     height: 70px;
     background: #f3eeea;
+    border-left: 1px solid #d6d6d6;
 }
 
 #navbar-footer > input {
     border-radius: 3px;
     border: 0;
-    width: 1200px;
+    width: 830px;
     padding: 17px;
     outline: none;
 }

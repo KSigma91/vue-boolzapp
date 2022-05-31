@@ -1,8 +1,4 @@
 /*
-Milestone 1
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-
 Milestone 2
 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
 Click sul contatto mostra la conversazione del contatto cliccato
@@ -19,7 +15,7 @@ var app = new Vue({
     el : '.container',
     data : {
         cliccato : 0,
-        selectMessage : "",
+        myMessage : "",
         listContact : [
             {
                 name : "Pinco",
@@ -45,7 +41,7 @@ var app = new Vue({
             },
             {
                 name : "Panco",
-                avatar : "img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png",
+                avatar : "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png",
                 visible : true,
                 messages : [
                     {
@@ -111,7 +107,7 @@ var app = new Vue({
             },
             {
                 name : "Pippo",
-                avatar : "img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png",
+                avatar : "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png",
                 visible : true,
                 messages : [
                     {
@@ -131,6 +127,16 @@ var app = new Vue({
     methods : {
         showMessage(posizioneContatto) {
             this.cliccato = posizioneContatto;
+        },
+        digitMessage() {
+            var myMessageSent = {
+                message : this.myMessage,
+                status : "sent",
+            }
+            if(myMessageSent !== "") {
+                this.listContact.push(myMessageSent);
+                myMessageSent = "";
+            }
         }
     }
 });
