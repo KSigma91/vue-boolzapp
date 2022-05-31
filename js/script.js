@@ -127,9 +127,11 @@ var app = new Vue({
         digitMessage() {
             var myMessageSent = {
                 message : this.myMessage,
+                status : "sent",
             }
             if(myMessageSent !== "") {
-                this.listContact.push(myMessageSent);
+                debugger;
+                this.listContact[this.cliccato].messages.push(myMessageSent);
                 myMessageSent = "";
             }
         }

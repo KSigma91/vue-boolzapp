@@ -104,15 +104,12 @@
                         <p>{{ received.message }}</p>
                         <span>{{ received.date }}</span>
                     </div>
+                    <!-- colonna dei messaggi dell'utente -->
                     <div class="user">
-                        <p></p>
-                        <span></span>
+                        <!-- <p></p>
+                        <span></span> -->
                     </div>
                 </div>
-                <!-- colonna dei messaggi dell'utente -->
-                <!-- <div class="col-user">
-                    
-                </div> -->
             </section>
 
             <!-- barra footer -->
@@ -122,7 +119,7 @@
                     <i class="far fa-smile"></i>
                 </a>
                 <!-- campo per la digitazione -->
-                <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="digitMessage">
+                <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="digitMessage" v-model="myMessage">
                 <!-- icona registra audio -->
                 <a href="#">
                     <i class="fas fa-microphone"></i>
