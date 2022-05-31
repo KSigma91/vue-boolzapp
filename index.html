@@ -100,16 +100,16 @@
             <section id="content">
                 <!-- colonna dei messaggi del contatto -->
                 <div class="col-contact">
-                    <div v-for="(received, i) in listContact[cliccato].messages" class="message contact" :key="i">
+                    <div v-for="(received, i) in listContact[cliccato].messages" class="message contact" :class="received.status === 'sent' ? 'user' : ''" :key="i">
                         <p>{{ received.message }}</p>
                         <span>{{ received.date }}</span>
                     </div>
                 </div>
                 <!-- colonna dei messaggi dell'utente -->
                 <div class="col-user">
-                    <div v-for="(sent, i) in listContact[cliccato].messages" class="message user" :key="i">
-                        <p>{{ sent.message }}</p>
-                        <span>{{ sent.date }}</span>
+                    <div class="message user">
+                        <p></p>
+                        <span></span>
                     </div>
                 </div>
             </section>
