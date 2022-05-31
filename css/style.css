@@ -233,15 +233,14 @@ i {
 /* messaggi */
 #chat #content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     height: calc(100vh - 182px);
     overflow-y: scroll;
 }
 
-#content .col-contact, .col-user {
-    display: flex;
-    flex-direction: column;
+#content .col-message {
+    width: 80%;
 }
 
 #content .message {
@@ -256,16 +255,8 @@ i {
     font-size: 15px;
 }
 
-.message.contact {
+.contact {
     background: white;
-}
-
-.message.user {
-    background: #d5f9ba;
-}
-
-.message > p {
-    margin-left: 8px;
 }
 
 .message > span {
@@ -274,28 +265,17 @@ i {
     color: #B1B1B1;
 }
 
-/* #content .col-me .message-me {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    margin
-    padding: 15px;
-    width: 332px;
-    height: 53px;
+.col-message .user {
+    float: right;
+}
+
+.user {
     background: #d5f9ba;
-} */
+}
 
-/* #content .col-me {
-    display: flex;
-    flex-direction: column;
-} */
-
-/* .message-me > span {
-    align-self: flex-end;
-    font-size: 10px;
-    color: #B1B1B1;
-} */
+.user > p {
+    margin-left: 8px;
+}
 
 
 /* barra per la digitazione */
