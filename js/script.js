@@ -10,12 +10,13 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 var app = new Vue({
     el : '.container',
     data : {
+        contact : "ok",
         cliccato : 0,
         myMessage : "",
         listContact : [
             {
                 name : "Pinco",
-                avatar : "img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png",
+                avatar : "https://www.archilibri.it/archi/wp-content/uploads/2018/05/img_avatar2.png",
                 visible : true,
                 messages : [
                     {
@@ -37,7 +38,7 @@ var app = new Vue({
             },
             {
                 name : "Panco",
-                avatar : "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png",
+                avatar : "https://www.w3schools.com/w3images/avatar6.png",
                 visible : true,
                 messages : [
                     {
@@ -81,7 +82,7 @@ var app = new Vue({
             },
             {
                 name : "Antani",
-                avatar : "img/kisspng-user-profile-computer-icons-profile-5ac0924526cda6.172054181522569797159.png",
+                avatar : "https://www.archilibri.it/archi/wp-content/uploads/2015/09/img_avatar.png",
                 visible : true,
                 messages : [
                     {
@@ -103,7 +104,7 @@ var app = new Vue({
             },
             {
                 name : "Pippo",
-                avatar : "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png",
+                avatar : "https://www.w3schools.com/w3images/avatar2.png",
                 visible : true,
                 messages : [
                     {
@@ -134,6 +135,11 @@ var app = new Vue({
                 this.listContact[this.cliccato].messages.push(myMessageSent);
                 myMessageSent = "";
             }
-        }
+        },
+        showContactMessage() {
+            setTimeout(() => {
+                this.listContact[this.cliccato].messages.push(contact);
+            }, 1000);
+        },
     }
 });
