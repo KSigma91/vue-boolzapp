@@ -1,8 +1,4 @@
 /*
-Milestone 3
-Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
-
 Milestone 4
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 */
@@ -10,7 +6,6 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 var app = new Vue({
     el : '.container',
     data : {
-        contact : "ok",
         cliccato : 0,
         myMessage : "",
         listContact : [
@@ -129,17 +124,22 @@ var app = new Vue({
             var myMessageSent = {
                 message : this.myMessage,
                 status : "sent",
-            }
+            };
             if(myMessageSent !== "") {
-                debugger;
                 this.listContact[this.cliccato].messages.push(myMessageSent);
                 myMessageSent = "";
-            }
-        },
-        showContactMessage() {
+            };
+            this.myMessage = "";
             setTimeout(() => {
-                this.listContact[this.cliccato].messages.push(contact);
+                this.listContact[this.cliccato].messages.push({
+                    message : "ok",
+                    status : "received",
+                });
             }, 1000);
         },
-    }
+        
+        // searchContact() {
+
+        // }
+    },
 });
