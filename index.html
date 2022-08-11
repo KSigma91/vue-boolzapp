@@ -80,10 +80,11 @@
             <header id="navbar-chat">
                 <div class="row">
                     <a href="#">
-                        <img src="https://www.archilibri.it/archi/wp-content/uploads/2018/05/img_avatar2.png" alt="user_img">
+                        <!-- <img src="https://www.archilibri.it/archi/wp-content/uploads/2018/05/img_avatar2.png" alt="user_img"> -->
+                        <img :src="listContact[cliccato].avatar" :alt="listContact[cliccato].name">
                     </a>
                     <a href="#">
-                        <h3>Pinco</h3>
+                        <h3>{{ listContact[cliccato].name }}</h3>
                         <p>Ultimo accesso oggi alle 12:00</p> 
                     </a>
                 </div>
