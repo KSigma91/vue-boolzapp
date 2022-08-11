@@ -53,18 +53,19 @@
 
             <!-- barra di ricerca -->
             <section id="search-bar"> 
-                <i class="fas fa-search"></i>              
-                <input type="search" placeholder="Cerca o inizia una nuova chat">
+                <i class="fas fa-search" @click="showContact"></i>              
+                <input type="search" name="search" placeholder="Cerca o inizia una nuova chat"
+                @keyup.enter="showContact" v-model="searchContact">
             </section>
 
             <!-- lista dei contatti -->
             <section id="col">
-                <div v-for="(item, i) in listContact" class="row" :key="i" @click="showMessage(i)">
+                <div v-for="(contact, i) in listContact" class="row" :key="i" @click="showMessage(i)" v-show="contact.visible">
                     <a href="#">
-                        <img :src="item.avatar" :alt="item.name">
+                        <img :src="contact.avatar" :alt="contact.name">
                     </a>
                     <a class="text-row" href="#">                      
-                        <h3>{{ item.name }}</h3>
+                        <h3>{{ contact.name }}</h3>
                         <p>Ultimo messaggio inviato</p>
                     </a> 
                     <span>12:00</span>

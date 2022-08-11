@@ -6,6 +6,7 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 var app = new Vue({
     el : '.container',
     data : {
+        searchContact : "",
         cliccato : 0,
         myMessage : "",
         listContact : [
@@ -132,14 +133,23 @@ var app = new Vue({
             this.myMessage = "";
             setTimeout(() => {
                 this.listContact[this.cliccato].messages.push({
-                    message : "ok",
+                    message : "Ok!",
                     status : "received",
                 });
             }, 1000);
-        },
-        
-        // searchContact() {
+        },    
+        showContact() {
+            this.listContact.forEach(contact => {
+                if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
 
-        // }
+            // return this.listContact.forEach((contact) => {
+            //     return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+            // })
+        }
     },
 });
