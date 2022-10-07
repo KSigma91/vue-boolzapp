@@ -17,27 +17,38 @@
 <body>
    
     <div class="container">
-
         <!-- lista dei contatti -->
         <aside id="contact">
             <header id="navbar-contact">
                 <!-- avatar -->
-                <a class="button" href="#">
+                <a class="avatar" href="#">
                     <img src="img/avatar-g199a63f42_1280.png" alt="avatar_profile_img">
                     <span>Utente</span>
                 </a> 
-
                 <!-- icone -->
-                <a class="button" href="#">
-                    <!-- stato -->
-                    <i class="fas fa-circle-notch"></i>
-                    <!-- nuova chat -->
-                    <i class="fas fa-comment-alt"></i>
-                    <!-- menu a tendina -->
-                    <i class="fas fa-ellipsis-v"></i>
-                </a>              
+                <div class="tools">
+                    <ul>
+                        <li>
+                            <!-- stato -->
+                            <a href="#">
+                                <i class="fas fa-circle-notch"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- nuova chat -->
+                            <a href="#">
+                                <i class="fas fa-comment-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- menu a tendina -->
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </header>
-
             <!-- notifiche messaggi -->
             <section id="alert">
                 <a href="#">
@@ -50,14 +61,12 @@
                     </a>
                 </div>
             </section>
-
             <!-- barra di ricerca -->
             <section id="search-bar"> 
                 <i class="fas fa-search" @click="showContact"></i>              
                 <input type="search" name="search" placeholder="Cerca o inizia una nuova chat"
                 @keyup.enter="showContact" v-model="searchContact">
             </section>
-
             <!-- lista dei contatti -->
             <section id="col">
                 <div v-for="(contact, i) in listContact" class="row" :key="i" @click="showMessage(i)" v-show="contact.visible">
@@ -75,12 +84,10 @@
 
         <!-- area della chat -->
         <main id="chat">
-
             <!-- area chat del contatto -->
             <header id="navbar-chat">
                 <div class="row">
                     <a href="#">
-                        <!-- <img src="https://www.archilibri.it/archi/wp-content/uploads/2018/05/img_avatar2.png" alt="user_img"> -->
                         <img :src="listContact[cliccato].avatar" :alt="listContact[cliccato].name">
                     </a>
                     <a href="#">
@@ -88,30 +95,47 @@
                         <p>Ultimo accesso oggi alle 12:00</p> 
                     </a>
                 </div>
-                <a href="#">
-                    <!-- cerca -->
-                    <i class="fas fa-search"></i>  
-                    <!-- allega -->
-                    <i class="fas fa-paperclip"></i>
-                    <!-- menu a tendina -->
-                    <i class="fas fa-ellipsis-v"></i>
-                </a>
+                <div class="tools">
+                    <ul>
+                        <li>
+                        <!-- cerca -->
+                            <a href="#">
+                                <i class="fas fa-search"></i>  
+                            </a>
+                        </li>
+                        <li>
+                        <!-- allega -->
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                        </li>
+                        <li>
+                        <!-- menu a tendina -->
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </header>
-
             <!-- messaggi -->
             <section id="content">
-                <!-- colonna dei messaggi del contatto -->
                 <div class="col-message">
-                    <div v-for="(received, i) in listContact[cliccato].messages" class="message contact" :class="received.status === 'sent' ? 'user' : 'contact'" :key="i">
-                        <p>{{ received.message }}</p>
+                    <div v-for="(received, i) in listContact[cliccato].messages" class="message contact" :class="received.status === 'sent' ? 'user' : ''" :key="i">
+                        <div class="head-message">
+                            <p>{{ received.message }}</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <div class="box">
+                                <ul>
+                                    <li>Message info</li>
+                                    <li>Delete message</li>
+                                </ul>
+                            </div>
+                        </div>
                         <span>{{ received.date }}</span>
-                    </div>
-                    <!-- colonna dei messaggi dell'utente -->
-                    <div class="user">                      
                     </div>
                 </div>
             </section>
-
             <!-- barra footer -->
             <footer id="navbar-footer">
                 <!-- emoticon -->
@@ -126,10 +150,10 @@
                 </a>
             </footer>
         </main>
-
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
 </body>
 </html>
