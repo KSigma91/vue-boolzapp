@@ -325,6 +325,19 @@ i {
     background: white;
 }
 
+.col-message .contact:after {
+    position: absolute;
+    left: -6%;
+    top: -1%;
+    width: 0;
+    height: 0;
+    border-radius: 3px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    content: '';
+}
+
 .col-message .message > span {
     display: flex;
     align-self: flex-end;
@@ -335,6 +348,19 @@ i {
 .col-message .user {
     align-self: flex-end;
     background: #d5f9ba;
+}
+
+.col-message .user:after {
+    position: absolute;
+    left: 95%;
+    top: -1%;
+    width: 0;
+    height: 0;
+    border-radius: 3px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #d5f9ba;
+    content: '';
 }
 
 /* barra per la digitazione */
